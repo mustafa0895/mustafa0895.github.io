@@ -346,7 +346,7 @@ btns.forEach(b=>{const i=+b.dataset.i;b.addEventListener('click',()=>show(i));b.
 show(0);
 /* liquid hover */
 const fine=matchMedia('(hover:hover) and (min-width:769px)').matches;
-if(fine&&!reduce)document.querySelectorAll('.liquid').forEach(fig=>{
+if(fine&&!reduce)document.querySelectorAll('.liquid:not(.still)').forEach(fig=>{
   const turb=fig.querySelector('feTurbulence'),disp=fig.querySelector('feDisplacementMap'),max=+fig.dataset.scale||28;
   let target=0,v=0,x=0;
   function step(){const f=(target-x)*140/1000*0.016*60;v=(v+f)*(1-13/60*0.5);x+=v*0.016*6;
